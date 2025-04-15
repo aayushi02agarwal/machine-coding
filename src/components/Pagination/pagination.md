@@ -7,3 +7,9 @@
 4. What if the api fails or data is not present?
 
 - Use dummy json to get apis
+
+**Steps:**
+1. Call the api and show the data
+2. Map over the products
+3. To show the product, will create a separate component
+4. Add pagination
