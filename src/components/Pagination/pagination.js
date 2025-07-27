@@ -33,10 +33,14 @@ export default function Pagination() {
         fetchData();
     }, []);
     const fetchData = async () => {
-        const data = await fetch("https://dummyjson.com/products?limit=500");
-        const json = await data.json();
-        setProducts(json.products);
-    }
+        try {
+            const data = await fetch("https://dummyjson.com/products?limit=500");
+            const json = await data.json();
+            setProducts(json.products);
+        } catch (error) {
+            console.error("Failed to fetch data:", error);
+        }
+    };
 
     return products.length === 0 ? <h1>No products</h1> : (
         <>
